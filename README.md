@@ -1,38 +1,50 @@
-# Collision Detection Frontend
+# Collision Admin Frontend (Vue 3 + Vite)
 
-This repository contains the **frontend web application** for a Collision Detection system.  
-It is built with **Vue** and **Vite**, and provides the user interface to visualize and interact with data coming from the backend API.
+A simple **admin web panel** for a vehicle collision-detection system.
 
----
-
-##  Features
-
-- Web interface for displaying collision detection data
-- Communication with a backend service through HTTP APIs
-- Environment-based configuration using `.env` files
-- Fast development and build with Vite
+This frontend is built with **Vue 3 + Vite + Element Plus**, and it connects to the backend REST API to:
+- Admin login
+- Manage users and families (groups)
+- Query and visualize uploaded sensor data with **ECharts** (line chart + table)
 
 ---
 
 ## Tech Stack
 
-- **Vue** – Frontend framework
-- **Vite** – Build tool and dev server
-- **Node.js / npm** – Dependency management and scripts
+- Vue 3
+- Vite
+- Element Plus (UI)
+- Pinia (state)
+- Vue Router
+- Axios (HTTP)
+- ECharts (charts)
 
 ---
 
-## Prerequisites
+## Pages / Routes
 
-Make sure you have installed:
+The app uses a protected layout route (`/`) that requires login:
 
-- **Node.js** (recommended: v18 or v20)
-- **npm**
+- `/login` — Administrator Login
+- `/dashboard` — Home / Intro
+- `/users` — User management (CRUD + enable/disable + reset password)
+- `/families` — Family management (create + view members)
+- `/sensor` — Sensor data query + table + line chart
 
 ---
 
-## Getting Started
+## Requirements
 
-### Install dependencies
-```bash
-npm install
+- Node.js (recommended 18+)
+- npm
+
+---
+
+## Environment Variables
+
+The frontend uses Vite environment variables.
+
+### `.env.development`
+
+```env
+VITE_API_BASE_URL=http://localhost:8080/api
